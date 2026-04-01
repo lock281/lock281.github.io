@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Únete a la Segunda! - Bomberos Calbuco</title>
+    <!-- Tailwind CSS para los estilos rápidos y responsivos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome para los íconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@400;500;700&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 70%);
+        }
+        
+        .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        /* Efecto de luz para el borde */
+        .glow-border {
+            box-shadow: 0 0 20px rgba(220, 38, 38, 0.4);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 md:p-8">
+
+    <!-- Contenedor Principal del Afiche -->
+    <div class="max-w-5xl w-full bg-slate-900 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row glow-border border border-slate-700 relative">
+        
+        <!-- Elemento de decoración superior -->
+        
+
+        <!-- Columna de la Imagen -->
+        <div class="w-full md:w-5/12 h-80 md:h-auto relative">
+            <!-- NOTA: Aquí se utiliza la imagen proporcionada -->
+            <img src="bombero segunda.png" alt="Bombero de la Segunda Compañía de Calbuco" class="object-cover w-full h-full object-center">
+            
+            <!-- Gradiente para suavizar la transición en móviles -->
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent md:bg-gradient-to-r md:from-transparent md:to-slate-900"></div>
+            
+            <!-- Etiqueta sobre la imagen -->
+            <div class="absolute bottom-4 left-4 md:bottom-8 md:left-8 bg-red-700 text-white font-bold px-4 py-1 rounded shadow-lg font-heading tracking-wide transform -rotate-2">
+                CALBUCO - CHILE
+            </div>
+        </div>
+
+        <!-- Columna de Contenido / Texto -->
+        <div class="w-full md:w-7/12 p-8 md:p-12 lg:p-14 flex flex-col justify-center relative z-10">
+            
+            <!-- Encabezado -->
+            <div class="mb-8 text-center md:text-left">
+                <span class="text-red-500 font-bold uppercase tracking-widest text-sm bg-red-500/10 px-3 py-1 rounded-full border border-red-500/20 inline-block mb-3">Campaña de Reclutamiento</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black font-heading mt-2 mb-4 text-white leading-tight uppercase">
+                    ¡Únete a la <br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-400">Segunda!</span>
+                </h1>
+                <p class="text-slate-300 text-lg md:text-xl leading-relaxed">
+                    ¿Tienes vocación de servicio? Sé parte de la historia y conviértete en voluntario de la <strong class="text-white">Segunda Compañía de Bomberos de Calbuco</strong>.
+                </p>
+            </div>
+
+            <!-- Caja de Detalles de la Reunión -->
+            <div class="bg-slate-800/80 backdrop-blur rounded-xl p-6 mb-8 border-l-4 border-red-600 shadow-inner transform transition hover:scale-[1.02] duration-300">
+                <h2 class="text-2xl font-bold font-heading mb-5 text-white flex items-center">
+                    <i class="fas fa-bullhorn text-red-500 mr-3"></i> REUNIÓN INFORMATIVA
+                </h2>
+                <ul class="space-y-4">
+                    <li class="flex items-center text-slate-200 text-lg">
+                        <div class="bg-slate-700 p-2 rounded-lg mr-4 shadow">
+                            <i class="fas fa-calendar-alt w-6 text-center text-red-500 text-xl"></i>
+                        </div>
+                        <span class="font-medium">Sabado, <strong class="text-white">11 de Abril</strong></span>
+                    </li>
+                    <li class="flex items-center text-slate-200 text-lg">
+                        <div class="bg-slate-700 p-2 rounded-lg mr-4 shadow">
+                            <i class="fas fa-clock w-6 text-center text-red-500 text-xl"></i>
+                        </div>
+                        <span class="font-medium"><strong class="text-white">17:00</strong> hrs.</span>
+                    </li>
+                    <li class="flex items-center text-slate-200 text-lg">
+                        <div class="bg-slate-700 p-2 rounded-lg mr-4 shadow">
+                            <i class="fas fa-map-marker-alt w-6 text-center text-red-500 text-xl"></i>
+                        </div>
+                        <span class="font-medium">En nuestro cuartel <strong class="text-white"> - Ernesto Riquelme #116</strong></span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Sección de Requisitos -->
+            <div class="mb-8">
+                <h3 class="text-xl font-bold font-heading mb-4 text-white uppercase flex items-center">
+                    <i class="fas fa-clipboard-check text-green-500 mr-2"></i> Requisitos de Ingreso
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-slate-800/50 p-4 rounded-lg flex items-start border border-slate-700">
+                        <i class="fas fa-user-check mt-1 w-6 text-green-400 text-lg"></i>
+                        <p class="ml-2 text-slate-300">Tener entre <strong class="text-white">14 y 45 años</strong> de edad.</p>
+                    </div>
+                    <div class="bg-slate-800/50 p-4 rounded-lg flex items-start border border-slate-700">
+                        <i class="fas fa-heartbeat mt-1 w-6 text-green-400 text-lg"></i>
+                        <p class="ml-2 text-slate-300">Tener <strong class="text-white">salud compatible</strong> con el servicio.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Llamado a la Acción (Botón) -->
+            <div class="text-center md:text-left mt-auto">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScbxJZnF0cUs2QfsOqIOWb9AAuKG5v29qGsxwUCf048ryue8w/viewform" target="_blank"
+   class="w-full md:w-auto inline-block text-center bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white font-bold py-4 px-10 rounded-xl text-lg transition duration-300 ease-in-out transform hover:-translate-y-1 shadow-lg hover:shadow-red-600/50 focus:outline-none focus:ring-4 focus:ring-red-500/50 uppercase tracking-wide font-heading">
+    
+    <i class="fas fa-fire-extinguisher mr-2"></i> Presiona aqui para postular
+</a>
+                </button>
+                <p class="mt-4 text-sm text-slate-500 text-center md:text-left">No se requiere experiencia previa, solo las ganas de ayudar.</p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

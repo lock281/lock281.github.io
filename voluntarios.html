@@ -1,0 +1,326 @@
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestros Voluntarios - Segunda Compañía de Bomberos de Calbuco</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0a3d14',   // Gris muy oscuro/Negro
+                            green: '#16a34a',  // Verde institucional
+                            yellow: '#fadb04', // Amarillo institucional
+                            red: '#dc2626'     // Rojo
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800 antialiased selection:bg-brand-yellow selection:text-brand-dark">
+
+    <!-- ==========================================
+         NAVEGACIÓN SUPERIOR
+         ========================================== -->
+    <nav class="bg-brand-dark text-white sticky top-0 z-50 shadow-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-3">
+                    <!-- Escudo referencial pequeño -->
+                    <div class="w-12 h-12 flex items-center justify-center">
+                        <img src="oficial final.png" alt="Logo Segunda Compañía" class="w-full h-full object-contain"></i>
+                    </div>
+                    <span class="font-heading font-bold text-lg hidden sm:block">Segunda Compañía Calbuco</span>
+                </div>
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 text-sm font-semibold hover:text-brand-yellow transition-colors bg-white/10 px-4 py-2 rounded-full">
+                        <i class="fa-solid fa-arrow-left"></i> Volver al Inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================
+         CABECERA
+         ========================================== -->
+    <header class="relative bg-brand-dark pt-16 pb-20 lg:pt-24 lg:pb-28 overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1549419142-ff54388e6bf1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-dark via-brand-dark/90 to-brand-dark"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-brand-yellow text-brand-dark text-xs font-bold uppercase tracking-widest mb-4 shadow-sm">
+                Nuestro Personal
+            </span>
+            <h1 class="font-heading text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4 drop-shadow-md">
+                Nuestros Voluntarios
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg text-gray-300">
+                Hombres y mujeres que día a día entregan su tiempo, esfuerzo y vocación bajo el lema de abnegación, disciplina y trabajo para proteger a la comunidad de Calbuco.
+            </p>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL
+         ========================================== -->
+        <main class="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-24">
+
+        <!-- 1. OFICIALIDAD DE COMPAÑÍA -->
+        <section>
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-3xl md:text-4xl font-extrabold text-brand-dark inline-flex flex-col items-center">
+                    Oficialidad de Compañía
+                    <div class="h-1.5 w-24 bg-brand-red rounded-full mt-3"></div>
+                </h2>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Tarjeta Plantilla -->
+                <script>
+                    const oficiales = [
+                        { nombre: "Tomas Cofré", cargo: "Capitán", icon: "fa-star", img: "no-foto.jpg"  },
+                        { nombre: "Camila Gonzalez", cargo: "Director", icon: "fa-briefcase", img: "72.jpg" },
+                        { nombre: "Eliseo Alvarado", cargo: "Secretario", icon: "fa-pen-nib", img: "no-foto.jpg" },
+                        { nombre: "Francisco Cardenas",  cargo: "Tesorero", icon: "fa-coins", img: "Cardenas.jpg"  },
+                        { nombre: "Cristobal Guerrero", cargo: "Teniente Primero", icon: "fa-shield-halved", img: "201-2.jpg" },
+                        { nombre: "Guillermo Oyarce", cargo: "Teniente Segundo", icon: "fa-shield", img: "202.jpg" },
+                        { nombre: "Pablo Lopez", cargo: "Jefe de Máquinas", icon: "fa-truck-fast", img: "no-foto.jpg" },
+                        { nombre: "Cristian Pineda", cargo: "Ayudante", icon: "fa-hands-helping", img: "204.jpg" }
+                    ];
+
+                    oficiales.forEach(oficial => {
+                        document.write(`
+                            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group border border-gray-100 flex flex-col h-full overflow-hidden">
+                                <div class="aspect-[3/4] w-full overflow-hidden bg-gray-200 relative">
+                                    <img src="${oficial.img}" alt="${oficial.nombre}" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                </div>
+                                <div class="p-6 text-center relative bg-white flex-grow flex flex-col justify-center">
+                                    <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-brand-dark rounded-full flex items-center justify-center border-4 border-white shadow-sm z-10 text-brand-yellow">
+                                        <i class="fa-solid ${oficial.icon}"></i>
+                                    </div>
+                                    <h3 class="font-heading font-bold text-xl text-brand-dark mt-4">${oficial.nombre}</h3>
+                                    <p class="text-brand-red font-bold text-sm mt-1 uppercase tracking-wider">${oficial.cargo}</p>
+                                </div>
+                            </div>
+                        `);
+                    });
+                </script>
+            </div>
+        </section>
+
+        <!-- 2. VOLUNTARIOS INSIGNES -->
+        <section>
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-3xl md:text-4xl font-extrabold text-brand-dark inline-flex flex-col items-center">
+                    Voluntarios Insignes
+                    <div class="h-1.5 w-24 bg-brand-yellow rounded-full mt-3"></div>
+                </h2>
+                <p class="mt-4 text-gray-500 max-w-2xl mx-auto">Más de 50 años de servicio ininterrumpido a la comunidad, pilares fundamentales de nuestra historia.</p>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center">
+                <script>
+                    const insignes = [
+                    { nombre: "Raul Gomez", registro: "253", img: "Raulg.jpg" },    
+                    { nombre: "Rodolfo Leiva", registro: "253", img: "Rodolfol.jpg" },
+                    { nombre: "Alberto Vasquez", registro: "253", img: "Albertov.jpg" },
+                    { nombre: "Heriberto Gonzalez", registro: "253", img: "Heribertog.jpg" }, 
+                    { nombre: "Ivan Vasquez", registro: "253", img: "no-foto.jpg" },  
+                    ];
+
+                    for(let i=0; i< insignes.length; i++) {
+                        document.write(`
+                            <div class="bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group border border-gray-100 flex flex-col overflow-hidden">
+                                <div class="aspect-square w-full overflow-hidden bg-gray-200">
+                                    <img src="${insignes[i].img}" alt="${insignes[i].nombre}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                </div>
+                                <div class="p-4 text-center">
+                                    <h3 class="font-heading font-bold text-sm text-brand-dark">${insignes[i].nombre}</h3>
+                                    <p class="text-gray-500 font-medium text-[10px] mt-1 uppercase tracking-wider">Voluntario Insigne de Chile</p>
+                                </div>
+                            </div>
+                        `);
+                    }
+                </script>
+            </div>
+        </section>
+
+        <!-- 3. VOLUNTARIOS HONORARIOS -->
+        <section>
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-3xl md:text-4xl font-extrabold text-brand-dark inline-flex flex-col items-center">
+                    Voluntarios Honorarios
+                    <div class="h-1.5 w-24 bg-brand-dark rounded-full mt-3"></div>
+                </h2>
+                <p class="mt-4 text-gray-500 max-w-2xl mx-auto">Ejemplo de constancia y entrega tras mas de 3 décadas de labor inagotable en las filas de la Segunda.</p>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center">
+                <script>
+                    const honorarios = [
+                    { nombre: "Leandro Soto", registro: "253", img: "Leandro soto.jpg" },    
+                    { nombre: "Juan Jaramillo", registro: "253", img: "Jaramillo.jpg" },
+                    { nombre: "Oscar Gonzalez", registro: "253", img: "no-foto.jpg" }, 
+                    ];
+
+                    for(let i=0; i< honorarios.length; i++) {
+                        document.write(`
+                            <div class="bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group border border-gray-100 flex flex-col overflow-hidden">
+                                <div class="aspect-square w-full overflow-hidden bg-gray-200">
+                                    <img src="${honorarios[i].img}" alt="${honorarios[i].nombre}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                </div>
+                                <div class="p-4 text-center">
+                                    <h3 class="font-heading font-bold text-sm text-brand-dark">${honorarios[i].nombre}</h3>
+                                    <p class="text-gray-500 font-medium text-[10px] mt-1 uppercase tracking-wider">Voluntario Honorario</p>
+                                </div>
+                            </div>
+                        `);
+                    }
+                </script>
+            </div>
+        </section>
+
+        <!-- 4. VOLUNTARIOS ACTIVOS -->
+        <section>
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-3xl md:text-4xl font-extrabold text-brand-dark inline-flex flex-col items-center">
+                    Voluntarios Activos
+                    <div class="h-1.5 w-24 bg-brand-green rounded-full mt-3"></div>
+                </h2>
+                <p class="mt-4 text-gray-500 max-w-2xl mx-auto">La fuerza operativa que responde al llamado del deber los 365 días del año.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
+<script>
+const voluntarios = [
+    { nombre: "Leonidas Soto", registro: "253", img: "no-foto.jpg" },    
+    { nombre: "Omar Guerrero", registro: "257", img: "257.jpg" },
+    { nombre: "Francisco Almonacid", registro: "259", img: "no-foto.jpg" },
+    { nombre: "Franco Añazco", registro: "262", img: "262.jpg" },
+    { nombre: "Ivan Ortega", registro: "270", img: "270.jpg" },
+    { nombre: "Andrea Vásquez", registro: "274", img: "no-foto.jpg" },
+    { nombre: "Maria Vasquez", registro: "275", img: "275.jpg" },
+    { nombre: "Katerine Zapata", registro: "276", img: "no-foto.jpg" },
+    { nombre: "Felipe Vargas", registro: "281", img: "281.jpg" },
+    { nombre: "Patricio Monsalvez", registro: "288", img: "288.jpg" },
+    { nombre: "Alvaro Guerrero", registro: "289", img: "no-foto.jpg" },
+    { nombre: "Alonso Oyarzo", registro: "295", img: "295.jpg" },
+    { nombre: "Elizabeth Alvarado", registro: "298", img: "no-foto.jpg" },
+    { nombre: "Lucas Vargas", registro: "299", img: "299.jpg" },
+    { nombre: "Jorge Carcamo", registro: "261", img: "261.jpg" },
+    { nombre: "Simón Sanchez", registro: "263", img: "263.jpg" },
+    { nombre: "Maximiliano Garcia", registro: "265", img: "265.jpg" },
+    { nombre: "Anelore Fuentes", registro: "266", img: "no-foto.jpg" },
+    { nombre: "Francisco Barría", registro: "267", img: "no-foto.jpg" },
+    { nombre: "Krishna Jara", registro: "268", img: "268.jpg" }
+];
+
+voluntarios.forEach(voluntario => {
+    document.write(`
+        <div class="bg-white rounded-lg shadow hover:shadow-md transition-all duration-300 group border border-gray-100 flex flex-col overflow-hidden">
+            <div class="aspect-[3/4] w-full overflow-hidden bg-gray-100 relative">
+                <img src="${voluntario.img}" alt="${voluntario.nombre}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute top-2 right-2 bg-brand-green w-3 h-3 rounded-full border border-white shadow-sm"></div>
+            </div>
+            <div class="p-3 text-center border-t border-brand-green/20">
+                <h3 class="font-heading font-bold text-sm text-brand-dark line-clamp-1">${voluntario.nombre}</h3>
+                <h3 class="font-heading font-bold text-sm text-brand-dark line-clamp-1">${voluntario.registro}</h3>
+                <p class="text-brand-green font-semibold text-[10px] mt-0.5 uppercase tracking-wider">Voluntario Activo</p>
+            </div>
+        </div>
+    `);
+});
+</script>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==========================================
+         FOOTER (Pie de página)
+         ========================================== -->
+    <footer class="bg-brand-dark text-white pt-16 pb-8 border-t-[6px] border-brand-green">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                
+                <!-- Info de la Compañía -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="oficial final.png" alt="Logo Segunda Compañía" class="w-12 h-12 object-contain"></i>
+                        <div>
+                            <h2 class="font-heading font-bold text-xl leading-tight">2ª COMPAÑIA</h2>
+                            <span class="text-xs text-gray-400 uppercase tracking-widest">Cuerpo de Bomberos Calbuco</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Profesionales de la emergencia al servicio de la comunidad. Especialidad en Materiales Peligrosos. Disciplina y Trabajo.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/segundacalbuco" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-yellow hover:text-brand-dark transition-colors">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/segunda.calbuco/" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-yellow hover:text-brand-dark transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Contacto -->
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-6 border-b border-white/20 pb-2 inline-block">Contacto</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-brand-yellow"></i>
+                            <span>Dirección del Cuartel, N° 123<br>Calbuco, Región de Los Lagos<br>Chile</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-brand-yellow"></i>
+                            <span>Nivel de Emergencia: 132<br>Cuartel: +56 65 2 123456</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-brand-yellow"></i>
+                            <span>contacto@segundacalbuco.cl</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-gray-500">
+                    &copy; <span id="year"></span> Diseñado por @El_lock para Segunda Compañía de Bomberos Calbuco. Todos los derechos reservados.
+                </p>
+                <div class="text-xs text-gray-500 font-mono">
+                    Diseñado con honor para servir
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

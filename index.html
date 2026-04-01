@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2ª Compañía de Bomberos - Calbuco</title>
+    
+    <!-- Fuentes de Google: Montserrat para títulos, Roboto para textos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS para el diseño responsivo y moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        /* Colores extraídos del logo oficial */
+                        'brand-dark': '#0a3d14',    /* Borde del escudo */
+                        'brand-green': '#1a6828',   /* Fondo del escudo */
+                        'brand-yellow': '#fadb04',  /* Número 2 */
+                        'brand-red': '#d32f2f',     /* Fuego */
+                    },
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                        'heading': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Ajuste para que al hacer click en el menú, el título no quede oculto bajo el navbar fijo */
+        html {
+            scroll-padding-top: 80px;
+        }
+        
+        /* Ocultar barra de desplazamiento horizontal accidental */
+        body {
+            overflow-x: hidden;
+        }
+        
+        /* Efecto parallax suave para el hero */
+        .bg-hero {
+            background-image: linear-gradient(rgba(10, 61, 20, 0.4), rgba(0, 0, 0, 0.7)), url('h-2-hazmat.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-brand-yellow selection:text-brand-dark">
+
+    <!-- ==========================================
+         BARRA DE NAVEGACIÓN (NAVBAR)
+         ========================================== -->
+    <nav class="fixed w-full top-0 z-50 bg-brand-dark text-white shadow-lg transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo y Nombre -->
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <!-- INSTRUCCIÓN: Cambia el 'src' por la ruta de tu imagen oficial, por ejemplo: src="oficial final.jpg" -->
+                    <div class="w-12 h-12 flex items-center justify-center">
+                        <img src="oficial final.png" alt="Logo Segunda Compañía" class="w-full h-full object-contain"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-heading font-bold text-lg leading-tight tracking-wide">2ª COMPAÑIA</h1>
+                        <span class="text-xs text-gray-300 uppercase tracking-widest">Cuerpo de Bomberos Calbuco</span>
+                    </div>
+                </div>
+
+                <!-- Menú Escritorio -->
+                <div class="hidden md:flex space-x-1 lg:space-x-4 items-center">
+                    <a href="#inicio" class="px-3 py-2 rounded-md text-sm font-medium hover:text-brand-yellow transition-colors">Inicio</a>
+                    <a href="#historia" class="px-3 py-2 rounded-md text-sm font-medium hover:text-brand-yellow transition-colors">Historia</a>
+                    <a href="#unidades" class="px-3 py-2 rounded-md text-sm font-medium hover:text-brand-yellow transition-colors">Unidades</a>
+                    <a href="#martir" class="px-3 py-2 rounded-md text-sm font-medium hover:text-brand-yellow transition-colors">Mártir</a>
+                    <a href="#hazmat" class="px-3 py-2 rounded-md text-sm font-medium hover:text-brand-yellow transition-colors">HAZMAT</a>
+                    <a href="#noticias" class="px-3 py-2 rounded-md text-sm font-medium hover:text-brand-yellow transition-colors">Noticias</a>
+                    <a href="voluntarios.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-brand-yellow transition-colors">Voluntarios</a>
+                    <a href="reclutamiento.html" target="_blank" class="ml-4 bg-brand-yellow text-brand-dark px-5 py-2 rounded-full font-bold text-sm hover:bg-yellow-400 hover:shadow-lg transition-all transform hover:-translate-y-0.5">Únete</a>
+                </div>
+
+                <!-- Botón Menú Móvil -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-200 hover:text-white focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-green border-t border-brand-dark">
+            <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3 shadow-inner">
+                <a href="#inicio" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-brand-dark mobile-link">Inicio</a>
+                <a href="#historia" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-brand-dark mobile-link">Historia</a>
+                <a href="#unidades" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-brand-dark mobile-link">Unidades</a>
+                <a href="#martir" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-brand-dark mobile-link">Mártir</a>
+                <a href="#hazmat" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-brand-dark mobile-link">HAZMAT</a>
+                <a href="#noticias" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-brand-dark mobile-link">Noticias</a>
+                <a href="voluntarios.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-brand-dark mobile-link">Voluntarios</a>
+                <a href="reclutamiento.html" class="block mt-4 text-center bg-brand-yellow text-brand-dark px-5 py-3 rounded-md font-bold text-base hover:bg-yellow-400 mobile-link">Postular Ahora</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================
+         SECCIÓN: INICIO (HERO)
+         ========================================== -->
+    <header id="inicio" class="bg-hero min-h-screen flex items-center justify-center relative pt-20">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-brand-dark/90"></div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-10">
+            <span class="inline-block py-1 px-3 rounded-full bg-brand-green/80 text-white text-sm font-semibold tracking-wider mb-4 border border-brand-green/50 shadow-sm backdrop-blur-sm">
+                Disciplina y Trabajo | Fundada el 9 de Nov. de 1902
+            </span>
+            <h1 class="font-heading text-5xl md:text-7xl font-extrabold text-white mb-6 drop-shadow-lg leading-tight">
+                Únete a la <span class="text-brand-yellow">Segunda</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-10 font-light drop-shadow">
+                Somos profesionales de la emergencia, especializados en materiales peligrosos y dedicados a proteger a la comunidad de Calbuco.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <!-- Enlace simulado a Google Forms -->
+                <a href="reclutamiento.html" target="_blank" rel="noopener noreferrer" class="bg-brand-yellow text-brand-dark font-bold text-lg px-8 py-4 rounded-full hover:bg-yellow-400 hover:shadow-[0_0_20px_rgba(250,219,4,0.4)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                    Postular Ahora <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#historia" class="bg-transparent border-2 border-white text-white font-bold text-lg px-8 py-4 rounded-full hover:bg-white hover:text-brand-dark transition-all flex items-center justify-center">
+                    Conocer Más
+                </a>
+            </div>
+        </div>
+        
+        <!-- Flecha animada para bajar -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#historia" class="text-white/70 hover:text-brand-yellow transition-colors">
+                <i class="fa-solid fa-chevron-down text-3xl"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         SECCIÓN: HISTORIA
+         ========================================== -->
+    <section id="historia" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl font-bold text-brand-dark mb-4">Nuestra Historia</h2>
+                <div class="w-24 h-1 bg-brand-yellow mx-auto rounded"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
+                <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
+                    <p>
+                        <strong class="text-brand-dark font-heading">Fundada meses posteriores a la fundacion del cuerpo de bomberos</strong>, la Segunda Compañía de Bomberos de Calbuco fue establecida formalmente el <strong>9 de noviembre de 1902</strong>. Comparte sus primeros meses de vida con la Primera y Tercera Compañía.
+                    </p>
+                    <p>
+                        A lo largo de los años, la compañía ha evolucionado desde la atención de incendios estructurales hasta convertirse en una unidad altamente especializada en el manejo de <strong>materiales peligrosos (HAZMAT)</strong>
+                    </p>
+                    <p>
+                        Actualmente contamos con dos unidades en servicio mas una unidad reliquia la cual lleva el nombre de <strong>"Maquinista tercero : Alejandro Cartagena Jordán"</strong> en honor a nuestro Martir.
+                    </p>
+                    
+                    <!-- Lista de Fundadores -->
+                    <div class="bg-gray-50 border border-gray-200 p-6 rounded-xl mt-8 shadow-sm">
+                        <h4 class="font-heading font-bold text-brand-dark mb-4 border-b pb-2"><i class="fa-solid fa-users mr-2"></i> Voluntarios Fundadores</h4>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-700">
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Francisco Alvarado S.</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Ernesto Ojeda</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Juan B. Ávila</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Manuel Olavarría</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Rodolfo Bustamante W.</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Santos Silva</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Eulogio Cofré G.</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Felipe Valderrama</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Eligio Gutiérrez</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Belarmino Andrade</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Félix Ojeda B.</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Zoilo Cofré G.</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Herminio Ojeda V.</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Pedro M. González</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Guillermo Schmeisser</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Augusto Barrientos</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Francisco E. Téllez</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Pedro Mayorga</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Lázaro Alvarado S.</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Pedro M. Ojeda</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Francisco Barría</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Teodulio Oyarzún</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Deciderio Cárcamo</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Ramón A. Soto</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Emilio González M.</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Carlos Yürgens R.</li>
+                            <li><i class="fa-solid fa-check text-brand-green text-xs mr-1"></i> Ismael Hernández</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Línea de tiempo de hitos -->
+                <div class="relative pl-8 md:pl-0">
+                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gray-200"></div>
+                    
+                    <div class="space-y-12 relative z-10">
+                        <!-- Hito 1943 -->
+                        <div class="md:flex items-center justify-between w-full">
+                            <div class="hidden md:block w-5/12 text-right pr-8">
+                                <h4 class="font-heading font-bold text-xl text-brand-dark">Gran Incendio</h4>
+                                <span class="text-brand-yellow font-bold">1943</span>
+                            </div>
+                            <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-brand-green border-4 border-white shadow"></div>
+                            <div class="pl-8 md:pl-0 w-full md:w-5/12 md:text-left md:pl-8">
+                                <h4 class="font-heading font-bold text-xl text-brand-dark md:hidden mb-1">Gran Incendio (1943)</h4>
+                                <p class="text-sm text-gray-600 bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                                    El 31 de enero de 1943, casi la mitad de Calbuco fue arrasado. La pérdida de material mermó la moral. Gracias a Gustavo Torres Ruiz y Milton Bosnich Pascuales, la compañía reclutó jóvenes para resurgir de las cenizas.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Hito 1959 -->
+                        <div class="md:flex items-center justify-between w-full flex-row-reverse">
+                            <div class="hidden md:block w-5/12 text-left pl-8">
+                                <h4 class="font-heading font-bold text-xl text-brand-dark">Reestructuración</h4>
+                                <span class="text-brand-yellow font-bold">1959</span>
+                            </div>
+                            <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-brand-green border-4 border-white shadow"></div>
+                            <div class="pl-8 md:pl-0 w-full md:w-5/12 md:text-right md:pr-8">
+                                <h4 class="font-heading font-bold text-xl text-brand-dark md:hidden mb-1">Reestructuración (1959)</h4>
+                                <p class="text-sm text-gray-600 bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                                    Se fusionó la 4ª Compañía (antigua) con la 2ª debido a limitaciones económicas. Destacados cuartinos como Juan Pedro Agüero, Leandro Soto Oyarzo y Ventura Benavides se sumaron a nuestras filas siendo un gran aporte a la compañia.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Hito Padrinos -->
+                        <div class="md:flex items-center justify-between w-full">
+                            <div class="hidden md:block w-5/12 text-right pr-8">
+                                <h4 class="font-heading font-bold text-xl text-brand-dark">Formación de Entidades</h4>
+                                <span class="text-brand-yellow font-bold">Años posteriores</span>
+                            </div>
+                            <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-brand-green border-4 border-white shadow"></div>
+                            <div class="pl-8 md:pl-0 w-full md:w-5/12 md:text-left md:pl-8">
+                                <h4 class="font-heading font-bold text-xl text-brand-dark md:hidden mb-1">Apoyo Institucional</h4>
+                                <p class="text-sm text-gray-600 bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                                    Nuestra compañía impulsó la creación de la actual 4ª Cía de Calbuco (San Rafael) y apadrinó la formación de la 2ª Cía. de Hornopirén (Cuerpo de Bomberos de Hualaihué) donando cascos y chaquetas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SECCIÓN: UNIDADES (MÁQUINAS)
+         ========================================== -->
+    <section id="unidades" class="py-24 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl font-bold text-brand-dark mb-4">Nuestras Unidades</h2>
+                <div class="w-24 h-1 bg-brand-yellow mx-auto rounded"></div>
+                <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+                    Conoce el material mayor que nos permite responder a las emergencias históricas y actuales con rapidez y eficiencia.
+                </p>
+            </div>
+
+            <!-- Subtítulo Unidades Actuales -->
+            <h3 class="font-heading text-2xl font-bold text-brand-green mb-8 border-b border-gray-300 pb-2"><i class="fa-solid fa-truck-fire mr-2"></i> Unidades Actuales</h3>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+                
+                <!-- Tarjeta Unidad Reliquia M-21 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform flex flex-col sm:flex-row group">
+                    <div class="sm:w-2/5 overflow-hidden relative min-h-[250px]">
+                        <img src="m21-vertical.jpg" alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 absolute inset-0">
+                        <div class="absolute top-4 left-4 bg-brand-dark text-white font-bold px-3 py-1 rounded-full text-xs shadow">Reliquia</div>
+                    </div>
+                    <div class="p-6 sm:w-3/5 flex flex-col justify-between">
+                        <div>
+                            <div class="text-xs text-brand-green font-bold uppercase tracking-wider mb-1">Carro Bomba</div>
+                            <h4 class="font-heading text-2xl font-bold text-brand-dark mb-1">Unidad M-21</h4>
+                            <p class="text-sm font-semibold text-gray-700 mb-3">Renault Camiva S170 (1989)</p>
+                            <p class="text-gray-600 text-sm mb-4">
+                                Bautizado en 1996 como "Maquinista 3° Alejandro Cartagena Jordán" en honor a nuestro martir. Llegó tras intensas gestiones en 1990 siendo en su época la máquina más moderna de la comuna.
+                            </p>
+                            <ul class="text-xs text-gray-500 mb-4 space-y-1">
+                                <li><i class="fa-solid fa-gears text-brand-yellow mr-1"></i> <strong>Motor:</strong> 170 HP con turbo (5 Lts)</li>
+                                <li><i class="fa-solid fa-water text-blue-500 mr-1"></i> <strong>Bomba:</strong> 3.000 Lts / min</li>
+                                <li><i class="fa-solid fa-droplet text-blue-500 mr-1"></i> <strong>Estanque:</strong> 3.000 Lts de agua</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center text-xs text-gray-400 border-t pt-3">
+                            <i class="fa-regular fa-calendar mr-2"></i> En servicio desde 1990
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Unidad B-2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform flex flex-col sm:flex-row group">
+                    <div class="sm:w-2/5 overflow-hidden relative min-h-[250px]">
+                        <img src="renault-me210.jpg" alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 absolute inset-0">
+                        <div class="absolute top-4 left-4 bg-brand-dark text-white font-bold px-3 py-1 rounded-full text-xs shadow">Agua</div>
+                    </div>
+                    <div class="p-6 sm:w-3/5 flex flex-col justify-between">
+                        <div>
+                            <div class="text-xs text-brand-green font-bold uppercase tracking-wider mb-1">Carro Bomba</div>
+                            <h4 class="font-heading text-2xl font-bold text-brand-dark mb-1">Unidad B-2</h4>
+                            <p class="text-sm font-semibold text-gray-700 mb-3">Renault Camiva M-e210 4x4 (2001)</p>
+                            <p class="text-gray-600 text-sm mb-4">
+                                Carro de Re-asignacion proveniente del cuerpo de Bomberos de Maullin. Actual B-2 cuenta con los equipos necesarios para trabajar en incendios y distintos tipos de emergencias.
+                            </p>
+                            <ul class="text-xs text-gray-500 mb-4 space-y-1">
+                                <li><i class="fa-solid fa-gears text-brand-yellow mr-1"></i> <strong>Motor:</strong> 210 HP con turbo (5 Lts)</li>
+                                <li><i class="fa-solid fa-water text-blue-500 mr-1"></i> <strong>Bomba:</strong> 3.000 Lts / min</li>
+                                <li><i class="fa-solid fa-droplet text-blue-500 mr-1"></i> <strong>Estanque:</strong> 3.000 Lts de agua</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center text-xs text-gray-400 border-t pt-3">
+                            <i class="fa-regular fa-calendar mr-2"></i> En servicio desde 2025
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Unidad H-2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform flex flex-col sm:flex-row group">
+                    <div class="sm:w-2/5 overflow-hidden relative min-h-[250px]">
+                        <img src="Spartan.jpg" alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 absolute inset-0">
+                        <div class="absolute top-4 left-4 bg-brand-red text-white font-bold px-3 py-1 rounded-full text-xs shadow">HAZMAT</div>
+                    </div>
+                    <div class="p-6 sm:w-3/5 flex flex-col justify-between">
+                        <div>
+                            <div class="text-xs text-brand-red font-bold uppercase tracking-wider mb-1">Especialidad Materiales Peligrosos</div>
+                            <h4 class="font-heading text-2xl font-bold text-brand-dark mb-1">Unidad H-2</h4>
+                            <p class="text-sm font-semibold text-gray-700 mb-3">Spartan Metro Star (2020)</p>
+                            <p class="text-gray-600 text-sm mb-4">
+                                Proyecto financiado por el CORE Los Lagos, las gestiones para la renovacion de nuestro material se iniciaron el año 2014. Llegó a Calbuco el 25 de Julio del 2021 desde EE.UU.
+                            </p>
+                            <ul class="text-xs text-gray-500 mb-4 space-y-1">
+                                <li><i class="fa-solid fa-gears text-brand-yellow mr-1"></i> <strong>Chasis:</strong> Techo elevado 24", 7+1 tripulantes</li>
+                                <li><i class="fa-solid fa-water text-blue-500 mr-1"></i> <strong>Bomba:</strong> Darley 1500 GPM (3.000L Agua / 80L Espuma)</li>
+                                <li><i class="fa-solid fa-bolt text-yellow-500 mr-1"></i> <strong>Extras:</strong> Generador 30kva, Mástil Teklite, Cascada</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center text-xs text-gray-400 border-t pt-3">
+                            <i class="fa-regular fa-calendar mr-2"></i> En servicio desde 2021
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Subtítulo Unidades Históricas -->
+            <h3 class="font-heading text-2xl font-bold text-gray-500 mb-8 border-b border-gray-300 pb-2"><i class="fa-solid fa-clock-rotate-left mr-2"></i> Unidades Históricas</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 opacity-90">
+                
+                <!-- Histórica 1 -->
+                <div class="bg-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 grayscale hover:grayscale-0">
+                    <img src="" alt="Bomba Meteoro" class="w-full h-40 object-cover">
+                    <div class="p-5 border-b border-gray-300 bg-gray-300/50">
+                        <h4 class="font-heading text-lg font-bold text-gray-700">Bomba "Meteoro"</h4>
+                        <div class="text-xs font-bold text-gray-500 mt-1">1904 - 1911</div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm">
+                            Nuestra primera bomba a palanca. Entregada en 1911 a la antigua 4ª Compañía y vendida en 1958 a Puerto Aguirre, donde aún es reliquia.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Histórica 2 -->
+                <div class="bg-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 grayscale hover:grayscale-0">
+                    <img src="Bomba_centenario.jpg" alt="Bomba Centenario" class="w-full h-40 object-cover">
+                    <div class="p-5 border-b border-gray-300 bg-gray-300/50">
+                        <h4 class="font-heading text-lg font-bold text-gray-700">Bomba "Centenario"</h4>
+                        <div class="text-xs font-bold text-gray-500 mt-1">1911 - 1949</div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm">
+                            Importada desde Hamburgo, Alemania. Bautizada el 8 de sept. de 1911 en honor al centenario de Chile. Es nuestra reliquia más preciada.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Histórica 3 -->
+                <div class="bg-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 grayscale hover:grayscale-0">
+                    <img src="Tractor.jpg" alt="Chrysler-Sealand" class="w-full h-40 object-cover">
+                    <div class="p-5 border-b border-gray-300 bg-gray-300/50">
+                        <h4 class="font-heading text-lg font-bold text-gray-700">Chrysler-Sealand + Tractor Ford</h4>
+                        <div class="text-xs font-bold text-gray-500 mt-1">1949 - 1973</div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm">
+                            Apodada "La Chancha". Bomba Chrysler-Sealand tipo trailer (500 GPM) remolcada por un Tractor Ford. Reemplazó a la bomba a palanca modernizando el servicio.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Histórica 4 -->
+                <div class="bg-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 grayscale hover:grayscale-0">
+                    <img src="Ford_segunda.jpg" alt="Ford kidde sul" class="w-full h-40 object-cover">
+                    <div class="p-5 border-b border-gray-300 bg-gray-300/50">
+                        <h4 class="font-heading text-lg font-bold text-gray-700">Ford Kidde Sul</h4>
+                        <div class="text-xs font-bold text-gray-500 mt-1">1973 - 1990</div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm">
+                            Camión Ford F-600 con bomba brasilera Kidde Sul. Estanque de 2.800 litros. Bautizado a fines de 1973 tras un incendio en calle E. Goycolea.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SECCIÓN: MÁRTIR
+         ========================================== -->
+    <section id="martir" class="py-24 bg-brand-dark relative overflow-hidden">
+        <!-- Textura de fondo sutil -->
+        <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-8 md:p-12 rounded-3xl shadow-2xl">
+                
+                <div class="flex flex-col lg:flex-row gap-12 items-start">
+                    <!-- Imagen e Info lateral -->
+                    <div class="w-full lg:w-1/3 flex flex-col items-center lg:items-start text-center lg:text-left">
+                        <div class="w-48 h-48 md:w-56 md:h-56 relative mb-6">
+                            <div class="absolute inset-0 border-4 border-brand-yellow/30 rounded-full transform -rotate-6"></div>
+                            <!-- EDITAR: Cambiar src por la foto de Alejandro Cartagena Jordán -->
+                            <img src="cartagena.png" alt="" class="w-full h-full object-cover rounded-full border-4 border-brand-dark shadow-2xl grayscale contrast-125">
+                            <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-brand-red text-white text-[10px] md:text-xs font-bold px-4 py-1 rounded-full uppercase tracking-widest whitespace-nowrap shadow-lg">
+                                Primer Mártir Institucional
+                            </div>
+                        </div>
+                        
+                        <h2 class="font-heading text-3xl font-bold mb-1 text-white">Alejandro Cartagena Jordán</h2>
+                        <h3 class="text-brand-yellow text-md font-medium mb-4">Maquinista 3° - (1942 - 1996)</h3>
+                        
+                        <ul class="text-sm text-gray-300 space-y-2 mb-6">
+                            <li><i class="fa-solid fa-star text-brand-yellow w-4"></i> Nacimiento: 4 de agosto de 1942</li>
+                            <li><i class="fa-solid fa-star text-brand-yellow w-4"></i> Ingreso a la 2ª: 15 de febrero de 1976</li>
+                            <li><i class="fa-solid fa-star text-brand-yellow w-4"></i> Inspector Gral. Materiales (85-88)</li>
+                            <li><i class="fa-solid fa-cross text-gray-400 w-4"></i> Fallecimiento: 18 de marzo de 1996</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Historia y Parte -->
+                    <div class="w-full lg:w-2/3 text-white">
+                        <i class="fa-solid fa-quote-left text-brand-yellow/30 text-4xl mb-4 block"></i>
+                        <p class="text-gray-300 leading-relaxed mb-6 font-light">
+                            Nació en Río Negro e inició su vida bomberil allí y en Maullín donde fue fundador de la tercera compañia de la localidad de Carelmapu, además de participar en Santiago. Al ingresar a la Segunda, se constituyó en un pilar fundamental, destacando por su responsabilidad y su amor por la conducción y cuidado de las máquinas. Anecdóticamente, residiendo en San Agustín, contrataba remeros para cruzar en bote al llamado del deber.
+                        </p>
+                        
+                        <!-- Box Parte de Comandancia -->
+                        <div class="bg-black/30 border-l-4 border-brand-yellow p-6 rounded-r-lg mt-4 shadow-inner">
+                            <div class="flex justify-between items-center mb-4 border-b border-white/10 pb-2">
+                                <h4 class="font-heading font-bold text-brand-yellow uppercase tracking-widest text-sm">Extracto Parte de Comandancia</h4>
+                                <span class="text-xs text-gray-400 font-mono">18 de Marzo de 1996</span>
+                            </div>
+                            <div class="text-xs md:text-sm font-mono text-gray-300 space-y-3 leading-relaxed max-h-64 overflow-y-auto pr-2 custom-scrollbar">
+                                <p>...Al llegar al lugar el Maquinista Alejandro Cartagena conecta el cuerpo de bomba y se baja del carro, mientras tanto el oficial Luis Neira hace una ampliación de su preinforme y el maquinista se dispone a trabajar estando el carro a escasos metros del incendio declarado de la fábrica "Celtix" de tres pisos, construcción sólida que arde violentamente.</p>
+                                <p>Cuándo el oficial Neira sale del carro a prestar ayuda al maquinista se da cuenta que este ha caído al suelo en la parte posterior del carro junto al cuerpo de bomba y presentaba dificultades para respirar... de inmediato el oficial comunica por radio "un bombero sufrió un accidente, pidan una ambulancia"...</p>
+                                <p>...Sergio Alejandro Cartagena Jordan, falleció a las 07:20 horas, de un infarto agudo al miocardio mientras trabajaba en el incendio, situación que lo hace ser el primer mártir de la institución.</p>
+                                <p class="text-white mt-4 font-bold">"Alejandro, tu espíritu de sacrificio y lealtad servirán de ejemplo a futuras generaciones y a la comunidad de Calbuco, porque sin ser de esta tierra entregaste tu vida al servicio de los demás."</p>
+                                <p class="text-right italic mt-2">- Alberto Vásquez Gómez, Comandante.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <style>
+            /* Custom scrollbar para la caja del parte de comandancia */
+            .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+            .custom-scrollbar::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); rounded: 4px; }
+            .custom-scrollbar::-webkit-scrollbar-thumb { background: #fadb04; border-radius: 4px; }
+        </style>
+    </section>
+
+    <!-- ==========================================
+         SECCIÓN: HAZMAT
+         ========================================== -->
+    <section id="hazmat" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                
+                <!-- Título y Texto Lado Izquierdo -->
+                <div class="lg:w-1/2">
+                    <div class="inline-flex items-center gap-2 bg-brand-red/10 text-brand-red px-4 py-2 rounded-full font-bold text-sm uppercase tracking-wider mb-6">
+                        <i class="fa-solid fa-biohazard text-lg"></i> Especialidad
+                    </div>
+                    <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-brand-dark mb-6 leading-tight">
+                        Materiales Peligrosos (HAZMAT)
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Nuestra compañía está altamente capacitada y equipada para responder a incidentes que involucren sustancias químicas, biológicas o radiológicas que representen un riesgo para la vida, los bienes y el medio ambiente.
+                    </p>
+                    
+                    <!-- Lista de capacidades -->
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-green flex items-center justify-center text-white mt-1">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <span class="ml-3 text-gray-700 font-medium">Identificación y evaluación de riesgos químicos.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-green flex items-center justify-center text-white mt-1">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <span class="ml-3 text-gray-700 font-medium">Contención de derrames y fugas industriales.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-green flex items-center justify-center text-white mt-1">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <span class="ml-3 text-gray-700 font-medium">Descontaminación masiva de personas y equipos.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tarjetas de iconos Lado Derecho -->
+                <div class="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+                    
+                    <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="w-32 h-32 bg-blue-100 rounded-xl flex items-center justify-center overflow-hidden">
+                        <img src="Encapsulado.jpg" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-heading text-xl font-bold text-brand-dark mb-2">Trajes Nivel A/B</h4>
+                        <p class="text-sm text-gray-600">Equipamiento de protección personal totalmente encapsulado para ambientes tóxicos.</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-shadow transform sm:translate-y-8">
+                        <div class="w-32 h-32 bg-blue-100 rounded-xl flex items-center justify-center overflow-hidden">
+                        <img src="medicion.jpg" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-heading text-xl font-bold text-brand-dark mb-2">Monitoreo</h4>
+                        <p class="text-sm text-gray-600">Instrumental avanzado para la detección de gases combustibles, tóxicos y niveles de oxígeno.</p>
+                    </div>
+
+                    <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="w-32 h-32 bg-blue-100 rounded-xl flex items-center justify-center overflow-hidden">
+                        <img src="Decon.jpg" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-heading text-xl font-bold text-brand-dark mb-2">Descontaminación</h4>
+                        <p class="text-sm text-gray-600">Piscinas y duchas portátiles para establecer corredores seguros de limpieza química.</p>
+                    </div>
+
+                    <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-shadow transform sm:translate-y-8">
+                        <div class="w-32 h-32 bg-blue-100 rounded-xl flex items-center justify-center overflow-hidden">
+                        <img src="curso.jpg" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-heading text-xl font-bold text-brand-dark mb-2">Capacitación</h4>
+                        <p class="text-sm text-gray-600">Estudio constante de la guía GRE y normativas internacionales de seguridad industrial.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- ==========================================
+         SECCIÓN: NOTICIAS (BLOG)
+         ========================================== -->
+    <section id="noticias" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl font-bold text-brand-dark mb-4">Últimas Noticias</h2>
+                <div class="w-24 h-1 bg-brand-yellow mx-auto rounded"></div>
+                <p class="mt-4 text-gray-600">Mantente informado del quehacer de nuestra compañía.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Noticia 1 -->
+                <!-- INSTRUCCIÓN: Para editar, cambia el texto dentro de las etiquetas <h3>, <p> y la URL de la imagen en <img> -->
+                <article class="bg-white rounded-2xl overflow-hidden shadow border border-gray-100 flex flex-col hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="visita-cuartel.jpg" alt="Noticia 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-brand-dark text-white text-xs font-bold px-3 py-1 rounded">
+                            Proyecto Cuartel
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="text-sm text-brand-green font-medium mb-2 flex items-center">
+                            <i class="fa-regular fa-clock mr-2"></i> 27 Enero, 2026
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors cursor-pointer">
+                            Avanza proyecto para nuestro nuevo cuartel
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4 flex-1">
+                            Como Segunda Compañía de Bomberos de Calbuco, durante los últimos años hemos impulsado diversas gestiones para concretar la construcción de nuestro nuevo...
+                        <a href="noticia1.html" class="text-brand-green font-bold text-sm inline-flex items-center hover:text-brand-dark transition-colors">
+                            Leer más <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Noticia 2 -->
+                <article class="bg-white rounded-2xl overflow-hidden shadow border border-gray-100 flex flex-col hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="h-2-esquina-cuartel.jpg" alt="Noticia 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-brand-red text-white text-xs font-bold px-3 py-1 rounded">
+                            Emergencia
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="text-sm text-brand-green font-medium mb-2 flex items-center">
+                            <i class="fa-regular fa-clock mr-2"></i> 27 Marzo, 2026
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors cursor-pointer">
+                            Nuestra compañia asiste a dos emergencias estructurales.
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4 flex-1">
+                            Como Segunda Compañía de Bomberos de Calbuco, reafirmamos nuestro compromiso con la seguridad de nuestros vecinos. Durante la jornada del pasado 27 de marzo de 2026...
+                        </p>
+                        <a href="noticia2.html" class="text-brand-green font-bold text-sm inline-flex items-center hover:text-brand-dark transition-colors">
+                            Leer más <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Noticia 3 -->
+                <article class="bg-white rounded-2xl overflow-hidden shadow border border-gray-100 flex flex-col hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="m-21-noche.jpg" alt="Noticia 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-brand-yellow text-brand-dark text-xs font-bold px-3 py-1 rounded">
+                            Institucional
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="text-sm text-brand-green font-medium mb-2 flex items-center">
+                            <i class="fa-regular fa-clock mr-2"></i> 20 Septiembre, 2023
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors cursor-pointer">
+                            Ceremonia de aniversario y entrega de premios
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4 flex-1">
+                            Con una solemne sesión, conmemoramos un año más de vida institucional. Se reconocieron los años de servicio y la asistencia de nuestros voluntarios...
+                        </p>
+                        <a href="#" class="text-brand-green font-bold text-sm inline-flex items-center hover:text-brand-dark transition-colors">
+                            Leer más <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer class="bg-brand-dark text-white pt-16 pb-8 border-t-[6px] border-brand-green">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                
+                <!-- Info de la Compañía -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="oficial final.png" alt="Logo Segunda Compañía" class="w-12 h-12 object-contain"></i>
+                        <div>
+                            <h2 class="font-heading font-bold text-xl leading-tight">2ª COMPAÑIA</h2>
+                            <span class="text-xs text-gray-400 uppercase tracking-widest">Cuerpo de Bomberos Calbuco</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Profesionales de la emergencia al servicio de la comunidad. Especialidad en Materiales Peligrosos. Disciplina y Trabajo.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/segundacalbuco" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-yellow hover:text-brand-dark transition-colors">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/segunda.calbuco/" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-yellow hover:text-brand-dark transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Enlaces Rápidos -->
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-6 border-b border-white/20 pb-2 inline-block">Enlaces Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#inicio" class="text-gray-400 hover:text-brand-yellow transition-colors text-sm flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2"></i> Inicio</a></li>
+                        <li><a href="#historia" class="text-gray-400 hover:text-brand-yellow transition-colors text-sm flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2"></i> Nuestra Historia</a></li>
+                        <li><a href="#unidades" class="text-gray-400 hover:text-brand-yellow transition-colors text-sm flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2"></i> Unidades Material Mayor</a></li>
+                        <li><a href="#hazmat" class="text-gray-400 hover:text-brand-yellow transition-colors text-sm flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2"></i> Especialidad HAZMAT</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contacto -->
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-6 border-b border-white/20 pb-2 inline-block">Contacto</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-brand-yellow"></i>
+                            <span>Ernesto Riquelme, N° 116<br>Calbuco, Región de Los Lagos<br>Chile</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-brand-yellow"></i>
+                            <span>Nivel de Emergencia: 132<br>Cuartel: +56 65 2 123456</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-brand-yellow"></i>
+                            <span>segundabomberoscalbuco@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-gray-500">
+                    &copy; <span id="year"></span> Por @El_lock para Segunda Compañía de Bomberos Calbuco. Todos los derechos reservados.
+                </p>
+                <div class="text-xs text-gray-500 font-mono">
+                    Diseñado con honor para servir
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         SCRIPTS (Interacciones y Menú)
+         ========================================== -->
+    <script>
+        // Actualizar el año automáticamente en el footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Lógica para el menú hamburguesa en móviles
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // Alternar menú al hacer clic en el botón
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú móvil al hacer clic en un enlace
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Efecto visual en la barra de navegación al hacer scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-xl', 'bg-brand-dark/95', 'backdrop-blur-sm');
+                nav.classList.remove('bg-brand-dark');
+            } else {
+                nav.classList.add('bg-brand-dark');
+                nav.classList.remove('shadow-xl', 'bg-brand-dark/95', 'backdrop-blur-sm');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Cuartel - Segunda Compañía de Bomberos de Calbuco</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0a3d14',
+                            green: '#16a34a',
+                            yellow: '#fadb04',
+                            red: '#dc2626'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800 antialiased selection:bg-brand-yellow selection:text-brand-dark">
+
+    <nav class="bg-brand-dark text-white sticky top-0 z-50 shadow-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-3">
+                    <img src="oficial final.png" alt="Logo Segunda Compañía" class="w-10 h-10 object-contain">
+                    <span class="font-heading font-bold text-lg hidden sm:block">Segunda Compañía Calbuco</span>
+                </div>
+                <a href="index.html#noticias" class="flex items-center gap-2 text-sm font-semibold hover:text-brand-yellow transition-all bg-white/10 px-4 py-2 rounded-full border border-white/5 hover:bg-white/20">
+                    <i class="fa-solid fa-arrow-left"></i> Volver
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative bg-brand-dark pt-16 pb-24 lg:pt-24 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 opacity-40">
+            <img src="b-2-cuartel.jpg" alt="" class="w-full h-full object-cover blur-[2px]">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/60 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+            <span class="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-brand-yellow text-brand-dark text-xs font-bold uppercase tracking-widest mb-6 shadow-lg">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-dark opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-dark"></span>
+                </span>
+                Proyecto Institucional
+            </span>
+            <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight drop-shadow-md">
+                Avanza nuestro proyecto de nuevo cuartel para la Segunda Compañía
+            </h1>
+            <div class="flex items-center justify-center gap-6 text-gray-300 text-sm font-medium">
+                <span class="flex items-center gap-2"><i class="fa-regular fa-calendar text-brand-yellow"></i> 27 de Enero, 2026</span>
+                <span class="flex items-center gap-2"><i class="fa-regular fa-clock text-brand-yellow"></i> 3 min de lectura</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative -mt-12 z-20 max-w-3xl mx-auto px-4 sm:px-6 pb-20">
+        <article class="bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 md:p-14">
+            
+            <p class="text-xl md:text-2xl font-heading font-semibold text-brand-dark mb-10 leading-relaxed italic border-l-4 border-brand-yellow pl-6">
+                "El sueño de nuestra nueva casa está cada vez más cerca de ser una realidad para todos los segundinos."
+            </p>
+
+            <figure class="mb-12 group">
+                <div class="overflow-hidden rounded-2xl shadow-lg">
+                    <img src="visita-cuartel.jpg" alt="Render nuevo cuartel" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <figcaption class="text-xs text-gray-500 mt-4 text-center font-medium uppercase tracking-wider">Gestiones técnicas para la relocalización y reposición</figcaption>
+            </figure>
+
+            <div class="space-y-8 text-gray-700 leading-relaxed text-lg">
+                <p>
+                    <span class="text-5xl font-heading font-bold float-left mr-3 mt-1 text-brand-green">C</span>omo Segunda Compañía de Bomberos de Calbuco, hemos impulsado firmemente las gestiones para concretar la construcción de nuestro nuevo cuartel. Este anhelo, que ha acompañado a generaciones de voluntarios, alcanzó hitos críticos entre 2024 y 2025, incluyendo la obtención del permiso de edificación.
+                </p>
+
+                <p>
+                    Este avance es decisivo para la obtención definitiva del financiamiento mediante el sistema de inversión pública. Aunque queda camino por recorrer, la declaración de <strong>admisibilidad</strong> valida técnicamente nuestra necesidad y la calidad del proyecto presentado.
+                </p>
+
+                <div class="bg-brand-dark text-white p-8 rounded-2xl shadow-xl relative overflow-hidden">
+                    <i class="fa-solid fa-shield-halved absolute right-[-20px] bottom-[-20px] text-white/5 text-9xl"></i>
+                    <p class="relative z-10 italic text-lg leading-relaxed">
+                        "Valoramos profundamente el apoyo del municipio y del Consejo Regional. Este cuartel no es solo un edificio, es la base operativa para proteger a todo Calbuco con mayor profesionalismo."
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-16 flex flex-col sm:flex-row gap-6 items-center justify-between border-t border-gray-100 pt-10">
+                <a href="index.html#noticias" class="group flex items-center gap-2 text-brand-dark font-bold hover:text-brand-green transition-colors">
+                    <i class="fa-solid fa-circle-arrow-left text-2xl text-brand-yellow group-hover:scale-110 transition-transform"></i> 
+                    Volver a Noticias
+                </a>
+                
+                <div class="flex items-center gap-4 bg-gray-50 px-6 py-3 rounded-full border border-gray-100">
+                    <span class="text-xs font-bold text-gray-500 uppercase tracking-tighter">Compartir</span>
+                    <div class="flex gap-3">
+                        <button class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition-all hover:-translate-y-1 shadow-md">
+                            <i class="fa-brands fa-facebook-f text-xs"></i>
+                        </button>
+                        <button class="w-8 h-8 rounded-full bg-sky-500 text-white flex items-center justify-center hover:bg-sky-600 transition-all hover:-translate-y-1 shadow-md">
+                            <i class="fa-brands fa-twitter text-xs"></i>
+                        </button>
+                        <button class="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center hover:bg-green-600 transition-all hover:-translate-y-1 shadow-md">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="bg-brand-dark text-white pt-16 pb-8 border-t-[6px] border-brand-green">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                
+                <!-- Info de la Compañía -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="oficial final.png" alt="Logo Segunda Compañía" class="w-12 h-12 object-contain"></i>
+                        <div>
+                            <h2 class="font-heading font-bold text-xl leading-tight">2ª COMPAÑIA</h2>
+                            <span class="text-xs text-gray-400 uppercase tracking-widest">Cuerpo de Bomberos Calbuco</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Profesionales de la emergencia al servicio de la comunidad. Especialidad en Materiales Peligrosos. Disciplina y Trabajo.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/segundacalbuco" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-yellow hover:text-brand-dark transition-colors">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/segunda.calbuco/" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-yellow hover:text-brand-dark transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Enlaces Rápidos -->
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-6 border-b border-white/20 pb-2 inline-block">Enlaces Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#inicio" class="text-gray-400 hover:text-brand-yellow transition-colors text-sm flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2"></i> Inicio</a></li>
+                        <li><a href="#historia" class="text-gray-400 hover:text-brand-yellow transition-colors text-sm flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2"></i> Nuestra Historia</a></li>
+                        <li><a href="#unidades" class="text-gray-400 hover:text-brand-yellow transition-colors text-sm flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2"></i> Unidades Material Mayor</a></li>
+                        <li><a href="#hazmat" class="text-gray-400 hover:text-brand-yellow transition-colors text-sm flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2"></i> Especialidad HAZMAT</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contacto -->
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-6 border-b border-white/20 pb-2 inline-block">Contacto</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-brand-yellow"></i>
+                            <span>Ernesto Riquelme, N° 116<br>Calbuco, Región de Los Lagos<br>Chile</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-brand-yellow"></i>
+                            <span>Nivel de Emergencia: 132<br>Cuartel: +56 65 2 123456</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-brand-yellow"></i>
+                            <span>segundabomberoscalbuco@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-gray-500">
+                    &copy; <span id="year"></span> Por @El_lock para Segunda Compañía de Bomberos Calbuco. Todos los derechos reservados.
+                </p>
+                <div class="text-xs text-gray-500 font-mono">
+                    Diseñado con honor para servir
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+
+</body>
+</html>
