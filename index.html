@@ -587,83 +587,70 @@
                 <p class="mt-4 text-gray-600">Mantente informado del quehacer de nuestra compañía.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Noticia 1 -->
-                <!-- INSTRUCCIÓN: Para editar, cambia el texto dentro de las etiquetas <h3>, <p> y la URL de la imagen en <img> -->
-                <article class="bg-white rounded-2xl overflow-hidden shadow border border-gray-100 flex flex-col hover:shadow-xl transition-shadow duration-300 group">
-                    <div class="relative h-52 overflow-hidden">
-                        <img src="visita-cuartel.jpg" alt="Noticia 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute top-4 left-4 bg-brand-dark text-white text-xs font-bold px-3 py-1 rounded">
-                            Proyecto Cuartel
-                        </div>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col">
-                        <div class="text-sm text-brand-green font-medium mb-2 flex items-center">
-                            <i class="fa-regular fa-clock mr-2"></i> 27 Enero, 2026
-                        </div>
-                        <h3 class="font-heading text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors cursor-pointer">
-                            Avanza proyecto para nuestro nuevo cuartel
-                        </h3>
-                        <p class="text-gray-600 text-sm mb-4 flex-1">
-                            Como Segunda Compañía de Bomberos de Calbuco, durante los últimos años hemos impulsado diversas gestiones para concretar la construcción de nuestro nuevo...
-                        <a href="noticia1.html" class="text-brand-green font-bold text-sm inline-flex items-center hover:text-brand-dark transition-colors">
-                            Leer más <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Noticia 2 -->
-                <article class="bg-white rounded-2xl overflow-hidden shadow border border-gray-100 flex flex-col hover:shadow-xl transition-shadow duration-300 group">
-                    <div class="relative h-52 overflow-hidden">
-                        <img src="h-2-esquina-cuartel.jpg" alt="Noticia 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute top-4 left-4 bg-brand-red text-white text-xs font-bold px-3 py-1 rounded">
-                            Emergencia
-                        </div>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col">
-                        <div class="text-sm text-brand-green font-medium mb-2 flex items-center">
-                            <i class="fa-regular fa-clock mr-2"></i> 27 Marzo, 2026
-                        </div>
-                        <h3 class="font-heading text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors cursor-pointer">
-                            Nuestra compañia asiste a dos emergencias estructurales.
-                        </h3>
-                        <p class="text-gray-600 text-sm mb-4 flex-1">
-                            Como Segunda Compañía de Bomberos de Calbuco, reafirmamos nuestro compromiso con la seguridad de nuestros vecinos. Durante la jornada del pasado 27 de marzo de 2026...
-                        </p>
-                        <a href="noticia2.html" class="text-brand-green font-bold text-sm inline-flex items-center hover:text-brand-dark transition-colors">
-                            Leer más <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Noticia 3 -->
-                <article class="bg-white rounded-2xl overflow-hidden shadow border border-gray-100 flex flex-col hover:shadow-xl transition-shadow duration-300 group">
-                    <div class="relative h-52 overflow-hidden">
-                        <img src="m-21-noche.jpg" alt="Noticia 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute top-4 left-4 bg-brand-yellow text-brand-dark text-xs font-bold px-3 py-1 rounded">
-                            Institucional
-                        </div>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col">
-                        <div class="text-sm text-brand-green font-medium mb-2 flex items-center">
-                            <i class="fa-regular fa-clock mr-2"></i> 20 Septiembre, 2023
-                        </div>
-                        <h3 class="font-heading text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors cursor-pointer">
-                            Ceremonia de aniversario y entrega de premios
-                        </h3>
-                        <p class="text-gray-600 text-sm mb-4 flex-1">
-                            Con una solemne sesión, conmemoramos un año más de vida institucional. Se reconocieron los años de servicio y la asistencia de nuestros voluntarios...
-                        </p>
-                        <a href="#" class="text-brand-green font-bold text-sm inline-flex items-center hover:text-brand-dark transition-colors">
-                            Leer más <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
-                        </a>
-                    </div>
-                </article>
-
+            <!-- Este contenedor se llenará automáticamente vía Javascript -->
+            <div id="contenedor-noticias" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <p class="text-center col-span-3 text-gray-500"><i class="fa-solid fa-spinner fa-spin mr-2"></i> Cargando noticias...</p>
             </div>
         </div>
     </section>
+
+    <!-- SCRIPT PARA CARGAR LAS NOTICIAS EN EL INDEX -->
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            try {
+                // Leer el mismo archivo JSON
+                const response = await fetch('noticias.json');
+                const noticias = await response.json();
+                
+                // Seleccionar contenedor
+                const contenedor = document.getElementById('contenedor-noticias');
+                
+                // Mostrar solo las 3 más recientes
+                const ultimasNoticias = noticias.slice(0, 3);
+                let html = '';
+
+                ultimasNoticias.forEach(noticia => {
+                    // Elegir color de etiqueta según categoría
+                    let badgeColor = "bg-brand-dark text-white";
+                    const cat = noticia.categoria.toLowerCase();
+                    if(cat === "emergencia") badgeColor = "bg-brand-red text-white";
+                    else if(cat === "institucional") badgeColor = "bg-brand-yellow text-brand-dark";
+                    else if(cat === "academia") badgeColor = "bg-brand-green text-white";
+                    
+                    html += `
+                    <article class="bg-white rounded-2xl overflow-hidden shadow border border-gray-100 flex flex-col hover:shadow-xl transition-shadow duration-300 group">
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="${noticia.imagenPrincipal}" alt="${noticia.titulo}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 ${badgeColor} text-xs font-bold px-3 py-1 rounded shadow-sm">
+                                ${noticia.categoria}
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="text-sm text-brand-green font-medium mb-2 flex items-center">
+                                <i class="fa-regular fa-calendar mr-2"></i> ${noticia.fecha}
+                            </div>
+                            <!-- El link apunta a noticia.html?id=X -->
+                            <h3 class="font-heading text-xl font-bold text-gray-900 mb-3 hover:text-brand-green transition-colors cursor-pointer" onclick="window.location.href='noticia.html?id=${noticia.id}'">
+                                ${noticia.titulo}
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-4 flex-1 line-clamp-3">
+                                ${noticia.resumen}
+                            </p>
+                            <a href="noticia.html?id=${noticia.id}" class="text-brand-green font-bold text-sm inline-flex items-center hover:text-brand-dark transition-colors">
+                                Leer más <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </article>
+                    `;
+                });
+                
+                contenedor.innerHTML = html;
+            } catch (error) {
+                console.error("Error cargando noticias en el inicio:", error);
+                document.getElementById('contenedor-noticias').innerHTML = '<p class="text-center col-span-3 text-red-500">No se pudieron cargar las noticias.</p>';
+            }
+        });
+    </script>
 
     <!-- ==========================================
          FOOTER
