@@ -16,8 +16,8 @@
         "texto": "Tres voluntarios de la Segunda Compañía de Bomberos completaron con éxito el curso de Operador Hazmat respuesta a incidentes con materiales peligrosos. Realizado en la Academia Nacional de Bomberos, campus sur, durante los días 17, 18 y 19 de abril. A lo largo de intensas jornadas de capacitación, los participantes adquirieron conocimientos teóricos y prácticos que les permitirán enfrentar de manera segura y eficiente diversas emergencias que involucren sustancias peligrosas, fortaleciendo así la preparación y capacidad de respuesta de la institución ante este tipo de incidentes"
       },
       {
-        "tipo": "parrafo_final",
-        "texto": "En paralelo, otros tres bomberos culminaron la fase final del curso de Control de Incendios en el simulador estructural del campus. Tras haber completado previamente la etapa teórica en su respectivo Cuerpo de Bomberos, los voluntarios se trasladaron a la academia ubicada en el sector de Pellines para desarrollar la fase práctica y rendir sus exámenes finales. Con la aprobación de este proceso formativo, dos de ellos alcanzaron el nivel de bombero profesional, marcando un importante avance en su trayectoria dentro de la institución.."
+        "tipo": "parrafo",
+        "texto": "En paralelo, otros tres bomberos culminaron la fase final del curso de Control de Incendios en el simulador estructural del campus. Tras haber completado previamente la etapa teórica en su respectivo Cuerpo de Bomberos, los voluntarios se trasladaron a la academia ubicada en el sector de Pellines para desarrollar la fase práctica y rendir sus exámenes finales. Con la aprobación de este proceso formativo, dos de ellos alcanzaron el nivel de bombero profesional, marcando un importante avance en su trayectoria dentro de la institución."
       }
     ],
     "galeria": [
@@ -29,13 +29,17 @@
     "id": "2",
     "categoria": "Emergencia",
     "fecha": "10 de Marzo de 2025",
-    "titulo": "Rápida respuesta a emergencia de materiales peligrosos",
-    "imagenPrincipal": "https://images.unsplash.com/photo-1543226862-39202f29696f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "resumen": "Nuestra unidad H-2 acudió a un llamado por emanación de gases en el sector industrial, logrando controlar la situación.",
+    "titulo": "Bomberos de la comuna se moviliza por incendio estructural",
+    "imagenPrincipal": "Quihua1.jpg",
+    "resumen": "Nuestra unidad B-2 acudió a un llamado por incendio de vivienda en sector rural",
     "bloques": [
       {
         "tipo": "parrafo",
-        "texto": "Este es un texto de ejemplo para la segunda noticia. Puedes editar esto en el archivo JSON cuando lo desees."
+        "texto": "A las 15:51 horas, la unidad B-2 fue despachada al lugar tras la alerta por el incendio de una vivienda de un piso, integrándose a las labores de combate junto a voluntarios de la Primera y Cuarta Compañía de Bomberos de Calbuco, quienes trabajaron coordinadamente para contener la emergencia y evitar una mayor propagación."
+      },
+      {
+        "tipo": "parrafo",
+        "texto": "Según el preinforme, el siniestro se encontraba en fase de libre combustión, afectando a una vivienda y con propagación hacia una bodega ubicada en el mismo terreno, lo que aumentó la complejidad de la situación. La emergencia se ubicó en las cercanías del sector Quincho Los Aromos, en ruta rural de Punta Quihua."
       }
     ],
     "galeria": []
