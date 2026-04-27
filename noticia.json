@@ -1,0 +1,80 @@
+[
+  {
+    "id": "1",
+    "categoria": "Institucional",
+    "fecha": "19 de Marzo de 2025",
+    "titulo": "Bomberos de Calbuco conmemoran 29 años del fallecimiento del mártir Alejandro Cartagena",
+    "imagenPrincipal": "oficial final.jpg",
+    "resumen": "Como parte de la conmemoración, el carro B-2 de la Segunda Compañía de Calbuco, en el que cumplió su última labor, fue declarado reliquia institucional en reconocimiento a su legado.",
+    "bloques": [
+      {
+        "tipo": "parrafo_destacado",
+        "texto": "El 18 de marzo de 1996, un incendio declarado consumía la ex fábrica Celtix. Alejandro Cartagena, en su cargo de maquinista tercero de la Segunda Compañía, encendió su máquina y partió junto a sus compañeros a enfrentar las llamas. Sin embargo, mientras conectaba la bomba para el combate del fuego, su corazón no resistió, cayendo junto al carro que tantas veces había conducido. Su entrega lo convirtió en el primer mártir del Cuerpo de Bomberos de Calbuco."
+      },
+      {
+        "tipo": "parrafo",
+        "texto": "En una emotiva ceremonia, bomberos de las cinco Compañías y Directorio General del Cuerpo de Bomberos de Calbuco, conmemoraron este martes 18 de marzo, los 29 años del fallecimiento del mártir Alejandro Cartagena Jordán."
+      },
+      {
+        "tipo": "parrafo",
+        "texto": "Comenzando en el cuartel general y con una romería hasta el Cementerio Católico, la ceremonia incluyó la lectura del parte de Comandancia de aquel trágico día, una ofrenda floral en la tumba del mártir, además de las palabras del Superintendente, Iván Vásquez y del Director Honorario del Cuerpo de Bomberos de Calbuco y ex Presidente Regional de Bomberos de Los Lagos, Alberto Vásquez, quien recordó momentos icónicos de los años de servicio de Alejandro Cartagena, como aquellas hazañas que atravesaba para poder cumplir con su deber bomberil."
+      },
+      {
+        "tipo": "cita",
+        "texto": "Cuando no había caminos, él venía en bote a remo a las reuniones desde San Agustín hacia Calbuco, hasta en algunos incendios concurría así. Ese sacrificio es el ejemplo que dejó para las futuras generaciones. Era una gran persona, un gran hombre y un gran ejemplo para bomberos Calbuco.",
+        "autor": "Iván Vásquez",
+        "cargo": "Superintendente del Cuerpo de Bomberos de Calbuco",
+        "color": "brand-yellow"
+      },
+      {
+        "tipo": "parrafo",
+        "texto": "Uno de los momentos más significativos de la jornada fue la designación del carro B-2 Renault Camiva s170 de la Segunda Compañía como reliquia del Cuerpo de Bomberos de Calbuco. Carro que lleva el nombre del mártir como homenaje, ya que fue en él en el que ocurrió su deceso."
+      },
+      {
+        "tipo": "cita",
+        "texto": "Este año es especial porque no solamente conmemoramos un nuevo año, sino también se da de baja el carro que lleva su nombre. (Nuestro mártir) representa el espíritu del lema del Cuerpo: abnegación, disciplina y trabajo. Los bomberos son personas que pueden dar su vida por salvar la vida de otros. Siempre va a ser un honor para nosotros llevar el nombre del mártir en nuestras filas.",
+        "autor": "Camila González",
+        "cargo": "Directora de la Segunda Compañía",
+        "color": "brand-green"
+      },
+      {
+        "tipo": "parrafo_final",
+        "texto": "El homenaje a Alejandro Cartagena Jordán reafirma el compromiso de Bomberos de Calbuco con la memoria de quienes han dado su vida en el cumplimiento del deber, inspirando a nuevas generaciones a seguir su ejemplo de valentía y servicio."
+      }
+    ],
+    "galeria": [
+      "https://images.unsplash.com/photo-1549419142-ff54388e6bf1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1628108429446-24e037ccbfb2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
+    "id": "2",
+    "categoria": "Emergencia",
+    "fecha": "10 de Marzo de 2025",
+    "titulo": "Rápida respuesta a emergencia de materiales peligrosos",
+    "imagenPrincipal": "https://images.unsplash.com/photo-1543226862-39202f29696f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "resumen": "Nuestra unidad H-2 acudió a un llamado por emanación de gases en el sector industrial, logrando controlar la situación.",
+    "bloques": [
+      {
+        "tipo": "parrafo",
+        "texto": "Este es un texto de ejemplo para la segunda noticia. Puedes editar esto en el archivo JSON cuando lo desees."
+      }
+    ],
+    "galeria": []
+  },
+  {
+    "id": "3",
+    "categoria": "Academia",
+    "fecha": "02 de Marzo de 2025",
+    "titulo": "Exitosa academia práctica de control de derrames",
+    "imagenPrincipal": "https://images.unsplash.com/photo-1601000624522-0d1276fa4825?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "resumen": "El fin de semana se realizó una intensa jornada de capacitación donde nuestros voluntarios practicaron técnicas de contención.",
+    "bloques": [
+      {
+        "tipo": "parrafo",
+        "texto": "Este es un texto de ejemplo para la tercera noticia. Puedes editar esto en el archivo JSON cuando lo desees."
+      }
+    ],
+    "galeria": []
+  }
+]
