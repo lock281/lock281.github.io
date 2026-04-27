@@ -1,45 +1,23 @@
 [
   {
     "id": "1",
-    "categoria": "Institucional",
-    "fecha": "19 de Marzo de 2025",
-    "titulo": "Bomberos de Calbuco conmemoran 29 años del fallecimiento del mártir Alejandro Cartagena",
-    "imagenPrincipal": "oficial final.jpg",
-    "resumen": "Como parte de la conmemoración, el carro B-2 de la Segunda Compañía de Calbuco, en el que cumplió su última labor, fue declarado reliquia institucional en reconocimiento a su legado.",
+    "categoria": "Capacitación",
+    "fecha": "17 de Abril de 2026",
+    "titulo": "Bomberos de nuestra compañia realizan capacitación en Academia nacional Campus Sur",
+    "imagenPrincipal": "capacitacion1.jpg",
+    "resumen": "Durante todo el fin de semana personal de nuesta compañia realizo la el curso Operador Hazmat, Respuesta a incidentes con materiales peligrosos en ANB Campus sur",
     "bloques": [
       {
         "tipo": "parrafo_destacado",
-        "texto": "El 18 de marzo de 1996, un incendio declarado consumía la ex fábrica Celtix. Alejandro Cartagena, en su cargo de maquinista tercero de la Segunda Compañía, encendió su máquina y partió junto a sus compañeros a enfrentar las llamas. Sin embargo, mientras conectaba la bomba para el combate del fuego, su corazón no resistió, cayendo junto al carro que tantas veces había conducido. Su entrega lo convirtió en el primer mártir del Cuerpo de Bomberos de Calbuco."
+        "texto": "3 nuevos operadores en materiales peligrosos se sumana nuestras filas"
       },
       {
         "tipo": "parrafo",
-        "texto": "En una emotiva ceremonia, bomberos de las cinco Compañías y Directorio General del Cuerpo de Bomberos de Calbuco, conmemoraron este martes 18 de marzo, los 29 años del fallecimiento del mártir Alejandro Cartagena Jordán."
-      },
-      {
-        "tipo": "parrafo",
-        "texto": "Comenzando en el cuartel general y con una romería hasta el Cementerio Católico, la ceremonia incluyó la lectura del parte de Comandancia de aquel trágico día, una ofrenda floral en la tumba del mártir, además de las palabras del Superintendente, Iván Vásquez y del Director Honorario del Cuerpo de Bomberos de Calbuco y ex Presidente Regional de Bomberos de Los Lagos, Alberto Vásquez, quien recordó momentos icónicos de los años de servicio de Alejandro Cartagena, como aquellas hazañas que atravesaba para poder cumplir con su deber bomberil."
-      },
-      {
-        "tipo": "cita",
-        "texto": "Cuando no había caminos, él venía en bote a remo a las reuniones desde San Agustín hacia Calbuco, hasta en algunos incendios concurría así. Ese sacrificio es el ejemplo que dejó para las futuras generaciones. Era una gran persona, un gran hombre y un gran ejemplo para bomberos Calbuco.",
-        "autor": "Iván Vásquez",
-        "cargo": "Superintendente del Cuerpo de Bomberos de Calbuco",
-        "color": "brand-yellow"
-      },
-      {
-        "tipo": "parrafo",
-        "texto": "Uno de los momentos más significativos de la jornada fue la designación del carro B-2 Renault Camiva s170 de la Segunda Compañía como reliquia del Cuerpo de Bomberos de Calbuco. Carro que lleva el nombre del mártir como homenaje, ya que fue en él en el que ocurrió su deceso."
-      },
-      {
-        "tipo": "cita",
-        "texto": "Este año es especial porque no solamente conmemoramos un nuevo año, sino también se da de baja el carro que lleva su nombre. (Nuestro mártir) representa el espíritu del lema del Cuerpo: abnegación, disciplina y trabajo. Los bomberos son personas que pueden dar su vida por salvar la vida de otros. Siempre va a ser un honor para nosotros llevar el nombre del mártir en nuestras filas.",
-        "autor": "Camila González",
-        "cargo": "Directora de la Segunda Compañía",
-        "color": "brand-green"
+        "texto": "Tres voluntarios de la Segunda Compañía de Bomberos completaron con éxito el curso de Operador Hazmat respuesta a incidentes con materiales peligrosos. Realizado en la Academia Nacional de Bomberos, campus sur, durante los días 17, 18 y 19 de abril. A lo largo de intensas jornadas de capacitación, los participantes adquirieron conocimientos teóricos y prácticos que les permitirán enfrentar de manera segura y eficiente diversas emergencias que involucren sustancias peligrosas, fortaleciendo así la preparación y capacidad de respuesta de la institución ante este tipo de incidentes"
       },
       {
         "tipo": "parrafo_final",
-        "texto": "El homenaje a Alejandro Cartagena Jordán reafirma el compromiso de Bomberos de Calbuco con la memoria de quienes han dado su vida en el cumplimiento del deber, inspirando a nuevas generaciones a seguir su ejemplo de valentía y servicio."
+        "texto": "En paralelo, otros tres bomberos culminaron la fase final del curso de Control de Incendios en el simulador estructural del campus. Tras haber completado previamente la etapa teórica en su respectivo Cuerpo de Bomberos, los voluntarios se trasladaron a la academia ubicada en el sector de Pellines para desarrollar la fase práctica y rendir sus exámenes finales. Con la aprobación de este proceso formativo, dos de ellos alcanzaron el nivel de bombero profesional, marcando un importante avance en su trayectoria dentro de la institución.."
       }
     ],
     "galeria": [
