@@ -9,20 +9,24 @@
     "bloques": [
       {
         "tipo": "parrafo_destacado",
-        "texto": "3 nuevos operadores en materiales peligrosos se sumana nuestras filas"
+        "texto": "Tres voluntarios de la Segunda Compañía de Bomberos aprobaron con éxito el curso de Operador Hazmat, orientado a la respuesta ante incidentes con materiales peligrosos. Esta capacitación se llevó a cabo en la Academia Nacional de Bomberos, campus sur, los días 17, 18 y 19 de abril."
       },
       {
         "tipo": "parrafo",
-        "texto": "Tres voluntarios de la Segunda Compañía de Bomberos completaron con éxito el curso de Operador Hazmat respuesta a incidentes con materiales peligrosos. Realizado en la Academia Nacional de Bomberos, campus sur, durante los días 17, 18 y 19 de abril. A lo largo de intensas jornadas de capacitación, los participantes adquirieron conocimientos teóricos y prácticos que les permitirán enfrentar de manera segura y eficiente diversas emergencias que involucren sustancias peligrosas, fortaleciendo así la preparación y capacidad de respuesta de la institución ante este tipo de incidentes"
+        "texto": "Durante intensas jornadas de formación, los participantes adquirieron tanto conocimientos teóricos como habilidades prácticas, que les permitirán enfrentar emergencias con sustancias peligrosas de manera segura y eficiente. De este modo, se fortalece la preparación y capacidad de respuesta de la institución frente a este tipo de incidentes."
       },
       {
         "tipo": "parrafo",
-        "texto": "En paralelo, otros tres bomberos culminaron la fase final del curso de Control de Incendios en el simulador estructural del campus. Tras haber completado previamente la etapa teórica en su respectivo Cuerpo de Bomberos, los voluntarios se trasladaron a la academia ubicada en el sector de Pellines para desarrollar la fase práctica y rendir sus exámenes finales. Con la aprobación de este proceso formativo, dos de ellos alcanzaron el nivel de bombero profesional, marcando un importante avance en su trayectoria dentro de la institución."
+        "texto": "Paralelamente, otros tres bomberos completaron la fase final del curso de Control de Incendios en el simulador estructural del mismo campus. Luego de haber aprobado previamente la etapa teórica en su respectivo Cuerpo de Bomberos, los voluntarios se trasladaron a la academia ubicada en el sector de Pellines para realizar la fase práctica y rendir sus evaluaciones finales."
+      },
+      {
+        "tipo": "parrafo",
+        "texto": "Como resultado de este proceso formativo, dos de ellos obtuvieron el nivel de bombero profesional, lo que representa un importante avance en su desarrollo dentro de la institución."
       }
     ],
     "galeria": [
-      "https://images.unsplash.com/photo-1549419142-ff54388e6bf1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1628108429446-24e037ccbfb2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      "anb1.jpg",
+      "anb2.jpg"
     ]
   },
   {
@@ -35,11 +39,15 @@
     "bloques": [
       {
         "tipo": "parrafo",
-        "texto": "A las 15:51 horas, la unidad B-2 fue despachada al lugar tras la alerta por el incendio de una vivienda de un piso, integrándose a las labores de combate junto a voluntarios de la Primera y Cuarta Compañía de Bomberos de Calbuco, quienes trabajaron coordinadamente para contener la emergencia y evitar una mayor propagación."
+        "texto": "A las 15:51 horas de 20 de abril, la unidad B-2 fue despachada tras una alerta de incendio que afectaba a una vivienda de un piso. Al llegar al lugar, se sumó a las labores de combate junto a voluntarios de la Primera y Cuarta Compañía de Bomberos de Calbuco, quienes trabajaron de manera coordinada para controlar la emergencia y evitar su propagación."
       },
       {
         "tipo": "parrafo",
-        "texto": "Según el preinforme, el siniestro se encontraba en fase de libre combustión, afectando a una vivienda y con propagación hacia una bodega ubicada en el mismo terreno, lo que aumentó la complejidad de la situación. La emergencia se ubicó en las cercanías del sector Quincho Los Aromos, en ruta rural de Punta Quihua."
+        "texto": "De acuerdo con el preinforme, el incendio se encontraba en fase de libre combustión, afectando completamente la vivienda y extendiéndose hacia una bodega ubicada en el mismo terreno, lo que incrementó la complejidad de la situación."
+      },
+      {
+        "tipo": "parrafo",
+        "texto": "La emergencia se registró en las cercanías del sector Quincho Los Aromos, en una ruta rural de Punta Quihua."
       }
     ],
     "galeria": []
